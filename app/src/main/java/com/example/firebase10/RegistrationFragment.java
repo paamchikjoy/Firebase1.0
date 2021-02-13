@@ -8,6 +8,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
+import androidx.navigation.Navigation;
 
 import android.text.TextUtils;
 import android.view.LayoutInflater;
@@ -15,7 +16,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -23,7 +23,6 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-import java.util.concurrent.Executor;
 
 
 public class RegistrationFragment extends Fragment {
@@ -77,6 +76,7 @@ public class RegistrationFragment extends Fragment {
                 }
                 else {
                     registerUser(txt_email, txt_password);
+                    Navigation.findNavController(view).navigate(R.id.action_registrationFragment_to_blankFragment);
                 }
 
             }
@@ -91,6 +91,7 @@ public class RegistrationFragment extends Fragment {
                 if (task.isSuccessful())
                 {
                     Toast.makeText(getContext(), "Successfully Registered", Toast.LENGTH_SHORT).show();
+
 
                 }
                 else

@@ -39,7 +39,6 @@
                 android:layout_height="wrap_content"
                 android:hint="Enter your password"
                 android:textSize="17sp"
-
                 android:inputType="textEmailAddress"
                 android:id="@+id/password_input"/>
 
@@ -53,10 +52,11 @@
         android:layout_height="wrap_content"
         android:text="Log In"
         android:layout_gravity="center"
-        android:id="@+id/confirm_loginBtn"
+        android:id="@+id/loginBtn"
         android:layout_marginBottom="10dp"/>
 
         <TextView
+            android:id="@+id/forgotPassword"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Forgot Password?"
